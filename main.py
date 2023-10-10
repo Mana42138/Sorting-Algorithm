@@ -1,12 +1,12 @@
 import random, json, os, time
 import pandas as pd
-from list import Bubble, Insert, Merge
+from list import Bubble, Insert, Merge, Quick
 from dotenv import load_dotenv
 
 load_dotenv() # Load Enviorment
 
 # Creat Arrays
-randomlist, py_list, ins_list, Merge_list = [], [], [], []
+randomlist, py_list, ins_list, Merge_list, Quick_list = [], [], [], [], []
 
 # Start Time Measuring
 measure_time = time.time()
@@ -35,6 +35,7 @@ def Ins_Array(n):
     py_list.append(n)
     ins_list.append(n)
     Merge_list.append(n)
+    Quick_list.append(n)
 
 # Generate Random Array
 for i in range(0,setting):
@@ -46,6 +47,7 @@ py_list.sort()
 Final = Bubble(randomlist)
 Insertion = Insert(ins_list)
 MergeSort = Merge(Merge_list)
+QuickSort = Quick(Quick_list)
 
 # Export Data to json file
 read_data = {}
@@ -53,6 +55,7 @@ read_data["Py_sort"] = py_list
 read_data["Bubble"] = Final
 read_data["Insert"] = Insertion
 read_data["Merge"] = MergeSort
+read_data["Quick"] = QuickSort
 
 writefile(data_file, read_data)
 

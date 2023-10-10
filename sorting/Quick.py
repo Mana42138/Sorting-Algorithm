@@ -1,13 +1,19 @@
-# Quick Sort
+def partition(array, low, high):
+    pivot = array[high]
 
-array = [2, 1, -3, 5]
+    i = low - 1
 
-for i in range(0, len(array)):
-    key = array[i]
-    j = i - 1
-    while j >= 0 and array[i] < array[j]:
-        array[i] = array[j + 1] 
-        j -= 1
-    array[j] = key
+    for j in range(low, high):
+        if array[j] <= pivot:
+            i = i + 1
+            (array[i], array[j]) = (array[j], array[i])
+    (array[i + 1], array[high]) = (array[high], array[i + 1])
 
-print(array)
+    return i + 1
+
+def QuickSort(array, low, high):
+    if low < high:
+        pivot = partition(array, low, high)
+        QuickSort(array, low, pivot - 1)
+        QuickSort(array, pivot + 1, high)
+    return array

@@ -25,4 +25,3 @@ def merge_sort(array):
     right_half = merge_sort(right_half)
 
     return merge(left_half, right_half)
-
