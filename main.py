@@ -42,7 +42,7 @@ for i in range(0,setting):
     n = random.randint(0,setting)
     Ins_Array(n)
 
-# Sort the random Arrays 
+# Sort the random Arrays
 py_list.sort()
 Final = Bubble(randomlist)
 Insertion = Insert(ins_list)
