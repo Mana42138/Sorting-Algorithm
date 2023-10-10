@@ -12,4 +12,4 @@ def Merge(array):
     return merge_sort(array)
 
 def Quick(array):
-    return QuickSort(array, 0, len(array) - 1)
+    return QuickSort(array, len(array) - 1)
