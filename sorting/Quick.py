@@ -17,3 +17,4 @@ def QuickSort(array, low, high):
         QuickSort(array, low, pivot - 1)
         QuickSort(array, pivot + 1, high)
     return array
+
