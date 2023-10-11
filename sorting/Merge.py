@@ -15,6 +15,9 @@ def merge(left, right):
     return result
 
 def merge_sort(array):
+    """
+        array: An array consisting of numbers and it will sort it with the Merge Algorithm
+    """
     if len(array) <= 1:
         return array
     
