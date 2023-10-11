@@ -13,3 +13,4 @@ def Merge(array):
 
 def Quick(array):
     return QuickSort(array, 0, len(array) - 1)
+
