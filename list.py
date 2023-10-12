@@ -3,6 +3,9 @@ from sorting.Insertion import Ins
 from sorting.Merge import merge_sort
 from sorting.Quick import QuickSort
 from sorting.Py_sort import psort
+from filesys.read import readfile
+from filesys.write import writefile
+
 def Bubble(array):
     return Bubb(array)
 
@@ -18,3 +21,8 @@ def Quick(array):
 def PYSort(array):
     return psort(array)
 
+def read(data_file):
+    readfile(data_file)
+
+def write(data_file, data):
+    writefile(data_file, data)

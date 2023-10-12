@@ -2,10 +2,8 @@ import sys
 import getopt
 import random
 import pandas as pd
-from list import Bubble, Insert, Merge, Quick, PYSort
+from list import Bubble, Insert, Merge, Quick, PYSort, write, read
 from dotenv import load_dotenv
-from pygnuplot import gnuplot
-from filesys import read, write
 
 load_dotenv() # Load Enviorment
 
@@ -28,11 +26,8 @@ def main(argv):
         elif opt in ("-r", "--repeat"):
             Repeat_ = arg
 
-    # Algorithm_ = input("Select Algorithm 1, 2, 3, 4, 5: ")
-    # Amount_ = input("Amount: ")
-
     # Creat Arrays
-    main_list, randomlist, py_list, ins_list, Merge_list, Quick_list = [], [], [], [], [], []
+    main_list = []
 
     for i in range(0, int(Repeat_)):
             
@@ -47,22 +42,36 @@ def main(argv):
             n = random.randint(0,setting)
             main_list.append(n)
 
+        Sorted_Array = ''
+        Sort_name = ''
+
         # Sort the random Arrays
         if Algorithm_ == "1":
             print("Python Sort")
-            PYSort(main_list)
+            Sort_name = "Python Sort"
+            Sorted_Array = PYSort(main_list)
         elif Algorithm_ == "2":
             print("Bubble Sort")
-            Final = Bubble(main_list)
+            Sort_name = "Bubble Sort"
+            Sorted_Array = Bubble(main_list)
         elif Algorithm_ == "3":
             print("Insert Sort")
-            Insertion = Insert(main_list)
+            Sort_name = "Insert Sort"
+            Sorted_Array = Insert(main_list)
         elif Algorithm_ == "4":
             print("Merge Sort")
-            MergeSort = Merge(main_list)
+            Sort_name = "Merge Sort"
+            Sorted_Array = Merge(main_list)
         elif Algorithm_ == "5":
             print("Quick Sort")
-            QuickSort = Quick(main_list)
+            Sort_name = "Quick Sort"
+            Sorted_Array = Quick(main_list)
+
+    Status_Data = {
+        "Algorithm": Sort_name,
+        "Numbers": Sorted_Array
+    }
+    write("data/comparing.json", Status_Data)
 
 if __name__ == "__main__":
    main(sys.argv[1:])
