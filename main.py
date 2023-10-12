@@ -54,7 +54,7 @@ def main(argv):
         data_file = "data/comparing.json"
 
         setting = int(Amount_) # int(os.getenv('SETTING'))
-
+        
         # Calcualte lowest/highest time to get the average time for each number to be sorted
         Min = 0.06376266479492188
         Max = 0.09207344055175781
