@@ -2,7 +2,7 @@ import sys
 import getopt
 import random
 import pandas as pd
-from list import Bubble, Insert, Merge, Quick, PYSort, write, read
+from list import *
 from dotenv import load_dotenv
 
 load_dotenv() # Load Enviorment

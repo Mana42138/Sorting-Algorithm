@@ -3,8 +3,8 @@ from sorting.Insertion import Ins
 from sorting.Merge import merge_sort
 from sorting.Quick import QuickSort
 from sorting.Py_sort import psort
-from filesys.read import readfile
-from filesys.write import writefile
+from filesys.read import *
+from filesys.write import *
 
 def Bubble(array):
     return Bubb(array)
