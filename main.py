@@ -1,9 +1,11 @@
-import sys, getopt
-import random, json, os, time
+import sys
+import getopt
+import random
 import pandas as pd
 from list import Bubble, Insert, Merge, Quick, PYSort
 from dotenv import load_dotenv
 from pygnuplot import gnuplot
+from filesys import read, write
 
 load_dotenv() # Load Enviorment
 
@@ -36,40 +38,13 @@ def main(argv):
             
         # Set Random Seed
         random.seed(int(Seed_))
-        
-        # Start Time Measuring
-        measure_time = time.time()
 
-        # read/write file
-        def readfile(data_file):
-            with open(data_file, "r") as f:
-                data = json.load(f)
-            return data
-        
-        def writefile(data_file, data):
-            with open(data_file, "w") as f:
-                data = json.dump(data, f, indent=4)
-            return data
-
-        data_file = "data/comparing.json"
-
-        setting = int(Amount_) # int(os.getenv('SETTING'))
-
-        # Calcualte lowest/highest time to get the average time for each number to be sorted
-        Min = 0.06376266479492188
-        Max = 0.09207344055175781
-
-        def Ins_Array(n):
-            randomlist.append(n)
-            py_list.append(n)
-            ins_list.append(n)
-            Merge_list.append(n)
-            Quick_list.append(n)
+        setting = int(Amount_)
 
         # Generate Random Array
+
         for i in range(0,setting):
             n = random.randint(0,setting)
-            # Ins_Array(n)
             main_list.append(n)
 
         # Sort the random Arrays
@@ -79,7 +54,6 @@ def main(argv):
         elif Algorithm_ == "2":
             print("Bubble Sort")
             Final = Bubble(main_list)
-            # print(Final)
         elif Algorithm_ == "3":
             print("Insert Sort")
             Insertion = Insert(main_list)
