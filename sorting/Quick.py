@@ -12,9 +12,6 @@ def partition(array, low, high):
     return i + 1
 
 def QuickSort(array, low, high):
-    """
-        array: An array consisting of numbers and it will sort it with the QuickSort Algorithm
-    """
     if low < high:
         pivot = partition(array, low, high)
         QuickSort(array, low, pivot - 1)

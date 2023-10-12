@@ -30,7 +30,7 @@ def main(argv):
     # Amount_ = input("Amount: ")
 
     # Creat Arrays
-    randomlist, py_list, ins_list, Merge_list, Quick_list = [], [], [], [], []
+    main_list, randomlist, py_list, ins_list, Merge_list, Quick_list = [], [], [], [], [], []
 
     for i in range(0, int(Repeat_)):
             
@@ -54,7 +54,7 @@ def main(argv):
         data_file = "data/comparing.json"
 
         setting = int(Amount_) # int(os.getenv('SETTING'))
-        
+
         # Calcualte lowest/highest time to get the average time for each number to be sorted
         Min = 0.06376266479492188
         Max = 0.09207344055175781
@@ -69,44 +69,26 @@ def main(argv):
         # Generate Random Array
         for i in range(0,setting):
             n = random.randint(0,setting)
-            Ins_Array(n)
+            # Ins_Array(n)
+            main_list.append(n)
 
         # Sort the random Arrays
         if Algorithm_ == "1":
             print("Python Sort")
-            PYSort(py_list)
+            PYSort(main_list)
         elif Algorithm_ == "2":
             print("Bubble Sort")
-            Final = Bubble(randomlist)
+            Final = Bubble(main_list)
             # print(Final)
         elif Algorithm_ == "3":
             print("Insert Sort")
-            Insertion = Insert(ins_list)
+            Insertion = Insert(main_list)
         elif Algorithm_ == "4":
             print("Merge Sort")
-            MergeSort = Merge(Merge_list)
+            MergeSort = Merge(main_list)
         elif Algorithm_ == "5":
             print("Quick Sort")
-            QuickSort = Quick(Quick_list)
-
-        # Export Data to json file
-        # read_data = {}
-        # read_data["Py_sort"] = py_list
-        # read_data["Bubble"] = Final
-        # read_data["Insert"] = Insertion
-        # read_data["Merge"] = MergeSort
-        # read_data["Quick"] = QuickSort
-
-        # writefile(data_file, read_data)
-
-        # # Get Stats
-        # stats = {
-        #     "Final": Final,
-        #     "Time": time.time() - measure_time,
-        #     "Average": Max - Min
-        # }
-
-        # print(pd.DataFrame(stats))
+            QuickSort = Quick(main_list)
 
 if __name__ == "__main__":
    main(sys.argv[1:])
