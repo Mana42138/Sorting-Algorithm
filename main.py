@@ -44,34 +44,34 @@ def main(argv):
 
         Sorted_Array = ''
         Sort_name = ''
-
+        
         # Sort the random Arrays
         if Algorithm_ == "1":
             print("Python Sort")
             Sort_name = "Python Sort"
-            Sorted_Array = PYSort(main_list)
+            Sorted_Array = py_sort(main_list)
         elif Algorithm_ == "2":
             print("Bubble Sort")
             Sort_name = "Bubble Sort"
-            Sorted_Array = Bubble(main_list)
+            Sorted_Array = Bubble_sort(main_list)
         elif Algorithm_ == "3":
             print("Insert Sort")
             Sort_name = "Insert Sort"
-            Sorted_Array = Insert(main_list)
+            Sorted_Array = Insert_sort(main_list)
         elif Algorithm_ == "4":
             print("Merge Sort")
             Sort_name = "Merge Sort"
-            Sorted_Array = Merge(main_list)
+            Sorted_Array = Merge_sort(main_list)
         elif Algorithm_ == "5":
             print("Quick Sort")
             Sort_name = "Quick Sort"
-            Sorted_Array = Quick(main_list)
+            Sorted_Array = Quick_sort(main_list, 0, len(main_list) - 1)
 
     Status_Data = {
         "Algorithm": Sort_name,
         "Numbers": Sorted_Array
     }
-    write("data/comparing.json", Status_Data)
+    writefile("data/comparing.json", Status_Data)
 
 if __name__ == "__main__":
    main(sys.argv[1:])

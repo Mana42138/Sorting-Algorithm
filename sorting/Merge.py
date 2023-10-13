@@ -14,14 +14,14 @@ def merge(left, right):
     result.extend(right[right_idx:])
     return result
 
-def merge_sort(array):
+def Merge_sort(array):
     if len(array) <= 1:
         return array
     
     mid = len(array) // 2
     left_half = array[:mid]
     right_half = array[mid:]
-    left_half = merge_sort(left_half)
-    right_half = merge_sort(right_half)
+    left_half = Merge_sort(left_half)
+    right_half = Merge_sort(right_half)
 
     return merge(left_half, right_half)

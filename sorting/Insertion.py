@@ -1,4 +1,4 @@
-def Ins(array):
+def Insert_sort(array):
     for i in range(1, len(array)):
         key = array[i]
         j = i - 1

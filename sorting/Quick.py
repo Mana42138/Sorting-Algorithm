@@ -11,10 +11,10 @@ def partition(array, low, high):
 
     return i + 1
 
-def QuickSort(array, low, high):
+def Quick_sort(array, low, high):
     if low < high:
         pivot = partition(array, low, high)
-        QuickSort(array, low, pivot - 1)
-        QuickSort(array, pivot + 1, high)
+        Quick_sort(array, low, pivot - 1)
+        Quick_sort(array, pivot + 1, high)
     return array
 
