@@ -73,4 +73,4 @@ def main(argv):
         writefile("data/comparing.json", Status_Data)
 
 if __name__ == "__main__":
-   main(sys.argv[1:])
+    main(sys.argv[1:])

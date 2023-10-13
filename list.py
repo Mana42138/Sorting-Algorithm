@@ -10,5 +10,4 @@ from sorting.Py_sort import *
 from filesys.read import *
 from filesys.write import *
 from dotenv import *
-import pandas as pd
 import sys
