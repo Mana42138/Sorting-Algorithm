@@ -12,10 +12,11 @@ def main(argv):
     Amount_ = ''
     Seed_ = ''
     Repeat_ = ''
-    options, arguments = getopt.getopt(sys.argv[1:], "ha:l:s:r:", ["help", "algorithm", "length", "seed", "repeat"])
+    write_data = ''
+    options, arguments = getopt.getopt(sys.argv[1:], "ha:l:s:r:d:", ["help", "algorithm", "length", "seed", "repeat", "data"])
     for opt, arg in options:
         if opt in ("-h", "--help"):
-            print('main.py\n -a Choose Algorithm\n 1: Python\n 2: Bubble Sort\n 3: Insert Sort\n 4: Merge Sort\n 5: Quick Sort\n -l <List Length> \n -s <seed> \n -r <repeat : 2>')
+            print('main.py\n -a Choose Algorithm\n 1: Python\n 2: Bubble Sort\n 3: Insert Sort\n 4: Merge Sort\n 5: Quick Sort\n -l <List Length> \n -s <seed> \n -r <repeat 1> \n -d <write data 1>')
             sys.exit()
         elif opt in ("-a", "--algorithm"):
             Algorithm_ = arg
@@ -25,6 +26,8 @@ def main(argv):
             Seed_ = arg
         elif opt in ("-r", "--repeat"):
             Repeat_ = arg
+        elif opt in ("-d", "--data"):
+            write_data = arg
 
     # Creat Arrays
     main_list = []
@@ -67,11 +70,12 @@ def main(argv):
             Sort_name = "Quick Sort"
             Sorted_Array = Quick_sort(main_list, 0, len(main_list) - 1)
 
-    Status_Data = {
-        "Algorithm": Sort_name,
-        "Numbers": Sorted_Array
-    }
-    writefile("data/comparing.json", Status_Data)
+    if int(write_data) == 1:
+        Status_Data = {
+            "Algorithm": Sort_name,
+            "Numbers": Sorted_Array
+        }
+        writefile("data/comparing.json", Status_Data)
 
 if __name__ == "__main__":
    main(sys.argv[1:])
