@@ -7,7 +7,7 @@ def main(argv):
     Amount_ = ''
     Seed_ = ''
     Repeat_ = ''
-    write_data = ''
+    Write_data = ''
     options, arguments = getopt.getopt(sys.argv[1:], "ha:l:s:r:d:", ["help", "algorithm", "length", "seed", "repeat", "data"])
     for opt, arg in options:
         if opt in ("-h", "--help"):
@@ -22,7 +22,7 @@ def main(argv):
         elif opt in ("-r", "--repeat"):
             Repeat_ = arg
         elif opt in ("-d", "--data"):
-            write_data = arg
+            Write_data = arg
 
     # Creat Array(s)
     main_list = []
@@ -65,7 +65,7 @@ def main(argv):
             Sort_name = "Quick Sort"
             Sorted_Array = Quick_sort(main_list, 0, len(main_list) - 1)
 
-    if int(write_data) == 1:
+    if int(Write_data) == 1:
         Status_Data = {
             "Algorithm": Sort_name,
             "Numbers": Sorted_Array
