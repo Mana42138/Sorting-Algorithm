@@ -1,5 +1,5 @@
 # Index Files
-from sys import *
+
 from getopt import *
 from random import *
 from sorting.Bubble import *
@@ -11,3 +11,4 @@ from filesys.read import *
 from filesys.write import *
 from dotenv import *
 import pandas as pd
+import sys
