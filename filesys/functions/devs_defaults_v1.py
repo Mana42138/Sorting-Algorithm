@@ -1,2 +1,2 @@
-import os
-import json
+import os as ok
+import json as jn
