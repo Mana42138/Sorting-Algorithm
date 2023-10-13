@@ -1,5 +1,3 @@
-# Index Files
-
 from sorting.Bubble import *
 from sorting.Insertion import *
 from sorting.Merge import *
