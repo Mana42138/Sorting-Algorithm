@@ -1,9 +1,4 @@
-import sys
-import getopt
-import random
-import pandas as pd
 from list import *
-from dotenv import load_dotenv
 
 load_dotenv() # Load Enviorment
 
