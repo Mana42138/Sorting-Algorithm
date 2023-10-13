@@ -1,4 +1,4 @@
-from functions.devs_defaults_v1 import *
+from filesys.functions.devs_defaults_v1 import *
 
 def isfile(data_file):
     if ok.path.isfile(data_file):

@@ -1,4 +1,4 @@
-from devs_defaults_v1 import *
+from filesys.functions.devs_defaults_v1 import *
 
 def readfile(data_file : str):
     """
