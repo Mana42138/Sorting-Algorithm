@@ -24,7 +24,7 @@ def main(argv):
         elif opt in ("-d", "--data"):
             write_data = arg
 
-    # Creat Arrays
+    # Creat Array(s)
     main_list = []
 
     for i in range(0, int(Repeat_)):
